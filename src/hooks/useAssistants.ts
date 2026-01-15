@@ -56,3 +56,18 @@ export const useDeleteAssistant = () => {
     },
   });
 };
+
+// Hook para obtener UNO solo por ID (Versión Mejorada)
+export const useAssistant = (id: string) => {
+  const { data: assistants, isLoading, isError } = useAssistants();
+
+  // Buscamos el específico
+  const assistant = assistants?.find((a) => a.id === id);
+
+  // Devolvemos todo el paquete para que la pantalla sepa qué hacer
+  return { 
+    assistant, 
+    isLoading, 
+    isError 
+  };
+};

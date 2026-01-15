@@ -55,7 +55,7 @@ export const AssistantCard = ({ assistant }: AssistantCardProps) => {
 
         {/* Botón Entrenar (Navegación) */}
         <Link 
-          href={`/assistant/${assistant.id}`}
+          href={`/assistants/${assistant.id}`}
           className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors border border-blue-200"
         >
           <MessageSquare size={16} />
