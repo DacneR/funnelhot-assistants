@@ -2,8 +2,9 @@
 
 import { useAssistants } from '@/hooks/useAssistants';
 import { AssistantCard } from '@/components/assistants/AssistantCard';
+import { AssistantModal } from '@/components/assistants/AssistantModal'; 
 import { useUIStore } from '@/store/useUIStore';
-import { Plus, Loader2 } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 export default function HomePage() {
   const { data: assistants, isLoading, isError } = useAssistants();
@@ -60,6 +61,7 @@ export default function HomePage() {
           <Plus size={20} />
           Crear mi primer asistente
         </button>
+        <AssistantModal />
       </div>
     );
   }
@@ -88,6 +90,7 @@ export default function HomePage() {
           <AssistantCard key={assistant.id} assistant={assistant} />
         ))}
       </div>
+      <AssistantModal />
     </div>
   );
 }
