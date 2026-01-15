@@ -1,6 +1,6 @@
 import { Assistant, AssistantFormData } from '@/types';
 
-// 1. Base de datos en memoria (Fake DB)
+// 1. Datos base quemados
 let assistants: Assistant[] = [
   {
     id: '1',
