@@ -4,13 +4,15 @@ import { useState, useEffect, useRef, use } from 'react'; // <--- IMPORTANTE: 'u
 import { useRouter } from 'next/navigation';
 import { useAssistant } from '@/hooks/useAssistants';
 import { useUpdateAssistant } from '@/hooks/useAssistants';
-import { ArrowLeft, Send, Save, Bot, User, Sparkles, MoreVertical } from 'lucide-react';
+import { ArrowLeft, Send, Save, Bot, User, Sparkles, MoreVertical, RotateCcw } from 'lucide-react';
 
 interface Message {
   id: string;
   role: 'user' | 'assistant';
   content: string;
 }
+
+
 
 // En Next.js 15+, params es una Promise. Definimos el tipo así:
 export default function AssistantPage({ params }: { params: Promise<{ id: string }> }) {
@@ -83,6 +85,15 @@ export default function AssistantPage({ params }: { params: Promise<{ id: string
       setMessages(prev => [...prev, botResponse]);
       setIsTyping(false);
     }, 1500); // 1.5s de delay para realismo
+  };
+
+  // --- FUNCIÓN PARA REINICIAR CHAT ---
+  const handleResetChat = () => {
+    setMessages([
+      { id: '1', role: 'assistant', content: '¡Hola! Soy tu asistente IA. ¿En qué puedo ayudarte hoy?' }
+    ]);
+    setInput('');
+    setIsTyping(false);
   };
 
   // --- LÓGICA DE GUARDADO DE REGLAS ---
@@ -273,6 +284,17 @@ export default function AssistantPage({ params }: { params: Promise<{ id: string
               onSubmit={handleSendMessage}
               className="flex gap-2 items-center bg-slate-50 border border-slate-200 rounded-xl p-2 focus-within:ring-2 focus-within:ring-blue-100 focus-within:border-blue-400 transition-all"
             >
+              {/* --- BOTÓN DE REINICIAR --- */}
+              <button
+                type="button" // ¡Importante que no sea submit!
+                onClick={handleResetChat}
+                className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors tooltip"
+                title="Reiniciar conversación"
+              >
+                <RotateCcw size={18} />
+              </button>
+              
+
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
