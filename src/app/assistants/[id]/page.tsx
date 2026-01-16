@@ -64,12 +64,11 @@ export default function AssistantPage({ params }: { params: Promise<{ id: string
       
       // Estas respuestas son lo suficientemente genéricas para encajar en casi cualquier demo
       const respuestasProfesionales = [
-        "Comprendido. Basado en los parámetros configurados, he procesado su solicitud. ¿Desea que profundice en algún punto específico?",
-        "Entendido. He analizado la información proporcionada. Aquí tiene un resumen preliminar de acuerdo a las instrucciones del sistema.",
-        "Gracias por su consulta. Siguiendo las directrices de tono y estilo establecidas, sugiero el siguiente enfoque para resolver el problema planteado.",
-        "He registrado esa instrucción. Procederé a generar la respuesta solicitada manteniendo el formato formal requerido.",
-        "Perfecto. Estoy consultando mi base de conocimiento para ofrecerle la respuesta más precisa posible dentro del contexto definido.",
-        "De acuerdo. He adaptado mi respuesta para cumplir con los criterios de longitud y tono que ha especificado en el panel de entrenamiento."
+        "Entendido, ¿en qué más puedo ayudarte?",
+        "Esa es una excelente pregunta. Déjame explicarte...",
+        "Claro, con gusto te ayudo con eso.",
+        "¿Podrías darme más detalles sobre tu consulta?",
+        "Perfecto, he registrado esa información."
       ];
 
       // Elegimos una al azar para dar variedad

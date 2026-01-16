@@ -3,6 +3,7 @@ import { useDeleteAssistant } from '@/hooks/useAssistants';
 import { useUIStore } from '@/store/useUIStore';
 import { Edit, Trash2, Bot, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
+import { toast } from 'sonner';
 
 interface AssistantCardProps {
   assistant: Assistant;
@@ -17,6 +18,7 @@ export const AssistantCard = ({ assistant }: AssistantCardProps) => {
     if (window.confirm(`¿Estás seguro de eliminar a "${assistant.name}"?`)) {
       deleteAssistant(assistant.id);
     }
+    
   };
 
   return (

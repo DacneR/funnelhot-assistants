@@ -57,7 +57,7 @@ export const api = {
 
   // DELETE: Eliminar (Con el 10% de error simulado que pide la prueba)
   deleteAssistant: async (id: string): Promise<void> => {
-    await delay(300); // Un poco menos de delay para que se sienta ágil
+    await delay(300);
     
     // Simulación de error aleatorio (10% probabilidad)
     if (Math.random() < 0.1) {

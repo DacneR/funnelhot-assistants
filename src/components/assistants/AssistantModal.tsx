@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { assistantSchema, AssistantSchemaType, LANGUAGES, TONES } from '@/lib/schemas';
+import { assistantSchema, LANGUAGES, TONES } from '@/lib/schemas';
 import { useUIStore } from '@/store/useUIStore';
 import { useCreateAssistant, useUpdateAssistant } from '@/hooks/useAssistants';
 import { X, ChevronRight, ChevronLeft, Save, AlertCircle } from 'lucide-react';
